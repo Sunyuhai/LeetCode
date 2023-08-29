@@ -125,4 +125,26 @@ public class SingleListedList {
         ListNode temp = headNode.next;
         return temp;
     }
+
+    /**
+     * 反转链表，返回反转之后 链表的头节点
+     * @param head
+     * @return
+     */
+    public ListNode reverseListed(ListNode head){
+        // 举例： 1 2 2 1
+        // 将头节点赋值当前节点
+        ListNode cur = head;
+        // 初始化反转后的头节点
+        ListNode pre = null;
+        while (cur != null){
+            // 暂时保存当前节点的后继节点，一开始cur为 1,temp为 2
+            ListNode temp = cur.next;
+            // 将反转后的头节点赋值当前节点的下一个节点，这样就把当前节点链接起来了
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
+    }
 }
