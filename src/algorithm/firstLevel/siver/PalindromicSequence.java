@@ -36,6 +36,19 @@ public class PalindromicSequence {
      */
     public static boolean isPalindrome_1(ListNode head) {
         Stack<ListNode> stack = new Stack<>();
+        ListNode temp = head;
+        while (temp != null){
+            stack.push(temp);
+            temp = temp.next;
+        }
+
+        while (!stack.empty() || head != null){
+            ListNode pop = stack.pop();
+            if (pop.val != head.val){
+                return false;
+            }
+            head = head.next;
+        }
         return true;
     }
 }
