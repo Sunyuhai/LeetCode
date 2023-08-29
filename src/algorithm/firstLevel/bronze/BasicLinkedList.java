@@ -25,8 +25,19 @@ public class BasicLinkedList {
         System.out.println(length);
 
         //在指定位置添加节点
-        singleListedList.addNodeIndex(node3,4);
+        singleListedList.addNodeIndex(node3,3);
         singleListedList.list();
 
+        //删除最后一个节点
+        singleListedList.delNodeEnd();
+        singleListedList.list();
+
+        //删除首部节点
+        singleListedList.delNodeStart();
+        singleListedList.list();
+
+        //在指定位置删除节点
+        singleListedList.delNodeIndex(2);
+        singleListedList.list();
     }
 }

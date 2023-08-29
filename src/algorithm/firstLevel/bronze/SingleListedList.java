@@ -21,6 +21,10 @@ public class SingleListedList {
         System.out.println(temp.toString());
     }
 
+    /**
+     * 返回当前链表长度
+     * @return
+     */
     public int getLength(){
         int count = 0;
         if (headNode.next == null){
@@ -66,7 +70,50 @@ public class SingleListedList {
             System.out.println("当前索引值不规范，请设置中间值插入！");
             return;
         }
+        ListNode temp = headNode;
+        while (index > 0){
+            index--;
+            temp = temp.next;
+        }
+        node.next = temp.next;
+        temp.next = node;
+    }
 
+    /**
+     * 在链表尾部：删除节点
+     */
+    public void delNodeEnd(){
+        ListNode temp = headNode;
+        while (temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
 
+    /**
+     * 在链表首部：删除节点
+     */
+    public void delNodeStart(){
+        ListNode temp = headNode.next.next;
+        headNode.next = temp;
+    }
+
+    /**
+     * 按照指定位置：添加节点
+     * @param index
+     */
+    public void delNodeIndex(int index){
+        int length = getLength();
+        if(index >= length || index <= 1){
+            System.out.println("当前索引值不规范，请设置中间值插入！");
+            return;
+        }
+        ListNode temp = headNode;
+        index--;
+        while (index > 0){
+            index--;
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
     }
 }
