@@ -116,4 +116,13 @@ public class SingleListedList {
         }
         temp.next = temp.next.next;
     }
+
+    /**
+     * 返回当前链表头节点
+     * @return
+     */
+    public ListNode returnHead(){
+        ListNode temp = headNode.next;
+        return temp;
+    }
 }
