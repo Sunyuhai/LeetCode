@@ -1,5 +1,8 @@
 package algorithm.thirdLevel.siver;
 
+import algorithm.thirdLevel.bronze.TraversalArray;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,10 +21,29 @@ import java.util.List;
  */
 public class SummaryRanges {
     public static void main(String[] args) {
-
+        int[] arr = new int[]{0,1,2,4,5,7};
+        List<String> list = summaryRanges(arr);
+        TraversalArray.listStrngPrint(list);
     }
 
     public static List<String> summaryRanges(int[] nums) {
-        return null;
+        List<String> ret = new ArrayList<String>();
+        int i = 0;
+        int n = nums.length;
+        while (i < n) {
+            int low = i;
+            i++;
+            while (i < n && nums[i] == nums[i - 1] + 1) {
+                i++;
+            }
+            int high = i - 1;
+            StringBuffer temp = new StringBuffer(Integer.toString(nums[low]));
+            if (low < high) {
+                temp.append("->");
+                temp.append(Integer.toString(nums[high]));
+            }
+            ret.add(temp.toString());
+        }
+        return ret;
     }
 }
