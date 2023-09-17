@@ -40,6 +40,6 @@ public class Merge2Array {
                 len2--;
             }
         }
-        TraversalArray.arrayprint(nums1);
+        TraversalArray.arrayPrint(nums1);
     }
 }

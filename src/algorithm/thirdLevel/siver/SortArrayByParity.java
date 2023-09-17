@@ -12,7 +12,7 @@ import algorithm.thirdLevel.bronze.TraversalArray;
 public class SortArrayByParity {
     public static void main(String[] args) {
         int[] arr = new int[]{2,1,3,4};
-        TraversalArray.arrayprint(sortArrayByParity(arr));
+        TraversalArray.arrayPrint(sortArrayByParity(arr));
     }
 
     public static int[] sortArrayByParity(int[] nums) {
