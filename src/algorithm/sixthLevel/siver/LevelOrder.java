@@ -12,7 +12,14 @@ import java.util.Queue;
  * 输出：[[3],[9,20],[15,7]]
  */
 public class LevelOrder {
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public static void main(String[] args) {
+        TreeNode root = BinaryTreeBuilder.buildTree(new int[]{3, 9, 20, -1, -1, 15, 7});
+        List<List<Integer>> lists = levelOrder(root);
+        for(List e : lists){
+            System.out.println(e);
+        }
+    }
+    public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         if (root != null){
