@@ -28,7 +28,7 @@ public class PreorderTraversal {
         dfs(root, result);
         return result;
     }
-
+    // 中序遍历和后序遍历类似相同
     public static void dfs(TreeNode head, List<Integer> result) {
         if (head == null) return;
         result.add(head.val);
