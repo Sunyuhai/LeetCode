@@ -19,6 +19,8 @@ public class demo {
                 e -> System.out.println(e.getKey())
         );
 
+        System.out.println();
+
     }
 
 
