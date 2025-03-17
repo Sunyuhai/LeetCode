@@ -34,6 +34,7 @@ public class AESUtil {
         try {
             System.out.println(encrypt("15160770632"));
             System.out.println(decrypt("GU0HVwm08rOVkJVz2ziSGQ=="));
+            System.out.println("测试");
         } catch (Exception e) {
             e.printStackTrace();
         }
