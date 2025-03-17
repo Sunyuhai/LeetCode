@@ -2,27 +2,29 @@ package kylin;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class demo {
     public static void main(String[] args) {
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(0, 0);
-        map.put(1, 6);
-        map.put(2, 7);
-        map.put(3, 5);
-        map.put(4, 0);
-        map.put(5, 8);
-        map.put(6, 1);
-        map.put(7, 0);
+        String ss = "abba";
 
-        map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).forEach(
-                e -> System.out.println(e.getKey())
-        );
-
-        System.out.println();
+        System.out.printf("ss", lengthOfLongestSubstring(ss));
 
     }
 
-
-
+    public static int lengthOfLongestSubstring(String s) {
+        if(s.length() == 0) return 0;
+        // abcabcbb
+        int i = 0;
+        int maxLen = 0;
+        HashMap<Character,Integer> map = new HashMap();
+        for (int j = 0; j < s.length(); j++) {
+            if (map.containsKey(s.charAt(j))){
+                i = Math.max(i,map.get(s.charAt(j)) + 1);
+            }
+            map.put(s.charAt(j),j);
+            maxLen = Math.max(maxLen,j - i + 1);
+        }
+        return maxLen;
+    }
 }
