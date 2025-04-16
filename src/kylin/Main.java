@@ -23,6 +23,12 @@ public class Main {
         return prev; // 返回反转后的头节点
     }
 
+    /**
+     * 修改了main
+     * @param list1
+     * @param list2
+     * @return
+     */
     // 合并两个链表的方法
     public static Node mergeLists(Node list1, Node list2) {
         Node dummy = new Node(-1);
