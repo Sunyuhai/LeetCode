@@ -24,7 +24,11 @@ public class demo {
     }
 
 
-
+    /**
+     * 修改demo
+     * @param s
+     * @return
+     */
     public int lengthOfLongestSubstring(String s) {
         if(s.length() == 0) return 0;
         // abcabcbb
